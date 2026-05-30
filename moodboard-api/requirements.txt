@@ -1,0 +1,18 @@
+fastapi[standard]==0.136.3
+orjson
+sqlalchemy[asyncio]==2.0.*
+asyncpg
+pydantic-settings>=2.0
+groq==1.2.0
+httpx
+pillow
+blurhash
+python-multipart
+supabase
+anyio
+upstash-redis
+# QStash enqueuing uses httpx directly (no SDK needed)
+websockets
+python-jose[cryptography]
+uvicorn[standard]
+yt-dlp

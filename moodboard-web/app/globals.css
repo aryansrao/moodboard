@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E4E2;
+  --color-text-primary: #0A0A0A;
+  --color-text-secondary: #6B7280;
+  --color-accent: #536878;
+  --color-accent-light: #EEF1F3;
+  --color-ice: #CFE3F0;
+  --color-ice-2: #E6F0F5;
+  --color-ink-on-ice: #0A1F2E;
+  --color-danger: #EF4444;
+  --color-success: #22C55E;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
+  --radius-card: 1.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E5E4E2; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #d1d0ce; }
+
+/* Masonry */
+.masonry-grid { display: flex; width: auto; gap: 12px; }
+.masonry-grid-column { padding-left: 12px; background-clip: padding-box; }
+.masonry-grid-column > div { margin-bottom: 12px; }
+
+/* Platform marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+/* View transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+  animation-timing-function: ease;
+}
+
+:focus-visible:not(input):not(textarea):not(select) {
+  outline: 2px solid #536878;
+  outline-offset: 2px;
+}
+
+input, textarea, select {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes imageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.image-fade-in {
+  animation: imageFadeIn 300ms ease forwards;
+}
+
+/* India flag gradient text */
+.india-flag {
+  background: linear-gradient(135deg, #FF9933 0%, #FF9933 28%, #FFFFFF 50%, #138808 72%, #138808 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 700;
+}
