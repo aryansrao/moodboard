@@ -60,6 +60,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://moodboard-web-aryansrao.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
     ],
