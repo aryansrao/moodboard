@@ -60,10 +60,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://moodboard-web-aryansrao.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
     ],
+    allow_origin_regex=r"https://moodboard(-web)?(-[a-z0-9]+)*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
