@@ -22,7 +22,6 @@ export function FeedContent() {
     setLoading,
   } = useFeedStore()
 
-  const [initialized, setInitialized] = useState(false)
   const [collections, setCollections] = useState<Collection[]>([])
 
   useEffect(() => {
@@ -42,9 +41,8 @@ export function FeedContent() {
         page = await api.feed.get(cursor)
       }
 
-      if (!initialized) {
+      if (cursor === undefined) {
         setPosts(page.posts)
-        setInitialized(true)
       } else {
         appendPosts(page.posts)
       }
@@ -55,19 +53,19 @@ export function FeedContent() {
     } finally {
       setLoading(false)
     }
-  }, [isLoading, hasMore, tab, cursor, initialized, setPosts, appendPosts, setCursor, setHasMore, setLoading])
+  }, [isLoading, hasMore, tab, cursor, setPosts, appendPosts, setCursor, setHasMore, setLoading])
 
-  // Load on mount and tab change
+  // Load on mount only if store has no cached posts
   useEffect(() => {
-    if (!initialized) {
+    if (posts.length === 0 && !isLoading) {
       loadMore()
     }
-  }, [initialized]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Reload when tab changes (store resets posts/cursor)
   useEffect(() => {
-    setInitialized(false)
-  }, [tab])
+    loadMore()
+  }, [tab]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const { sentinelRef } = useInfiniteScroll({
     onLoadMore: loadMore,
