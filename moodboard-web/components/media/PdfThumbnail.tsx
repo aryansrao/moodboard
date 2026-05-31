@@ -34,7 +34,7 @@ export function PdfThumbnail({ url, className }: PdfThumbnailProps) {
         canvas.height = viewport.height
         const ctx = canvas.getContext('2d')!
 
-        await page.render({ canvasContext: ctx, viewport }).promise
+        await page.render({ canvasContext: ctx, canvas, viewport }).promise
         if (!cancelled) setDataUrl(canvas.toDataURL('image/jpeg', 0.85))
       } catch {
         if (!cancelled) setError(true)

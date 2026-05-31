@@ -29,7 +29,7 @@ export async function proxy(request: NextRequest) {
         getAll() {
           return request.cookies.getAll()
         },
-        setAll(cs) {
+        setAll(cs: { name: string; value: string; options?: Record<string, unknown> }[]) {
           cs.forEach(({ name, value, options }) =>
             response.cookies.set(name, value, options)
           )

@@ -95,8 +95,8 @@ export const api = {
     delete(id: string): Promise<void> {
       return request<void>(`/posts/${id}`, { method: 'DELETE' })
     },
-    like(id: string): Promise<{ liked: boolean }> {
-      return request<{ liked: boolean }>(`/posts/${id}/like`, { method: 'POST' })
+    like(id: string): Promise<{ liked: boolean; like_count: number }> {
+      return request<{ liked: boolean; like_count: number }>(`/posts/${id}/like`, { method: 'POST' })
     },
     save(id: string, collectionId?: string): Promise<{ saved: boolean }> {
       return request<{ saved: boolean }>(`/posts/${id}/save`, {

@@ -6,7 +6,6 @@ const bundleAnalyzer = withBundleAnalyzer({
 })
 
 const config: NextConfig = {
-  cacheComponents: true,
   experimental: {
     viewTransition: true,
     // Persist Turbopack compiler artifacts between dev server restarts
