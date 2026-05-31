@@ -62,8 +62,9 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001",
+        "https://trymoodboard.vercel.app",
+        "https://moodboard-web-phi.vercel.app",
     ],
-    allow_origin_regex=r"https://moodboard(-web)?(-[a-z0-9]+)*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
