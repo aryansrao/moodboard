@@ -2,7 +2,7 @@
 
 **Visual content curation platform.** Save anything from YouTube, TikTok, Instagram, Spotify, Behance, Reddit — or any URL on the internet. Every save is AI-tagged, full-text searchable, and privately yours by default.
 
-**Live → [moodboard-web-aryansrao.vercel.app](https://moodboard-web-aryansrao.vercel.app)**  
+**Live → [moodboard-web-aryansrao.vercel.app]([https://trymoodboard.vercel.app/](https://trymoodboard.vercel.app/))**  
 **API → [moodboard-api-aryansrao.vercel.app](https://moodboard-api-aryansrao.vercel.app/api/docs)**  
 **Built by → [Aryan S Rao](https://aryansrao.vercel.app)**
 
